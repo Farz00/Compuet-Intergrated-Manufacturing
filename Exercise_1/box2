@@ -1,0 +1,238 @@
+import bpy
+
+# Define the dimensions of the box
+box_width = 2.5
+box_depth = 2.5
+box_height = 1.8
+lid_height = 0.5
+
+# Create a new mesh for the box
+mesh = bpy.data.meshes.new("BoxMesh")
+
+# Define the vertices of the box
+verts = [
+    (0, 0, 0),
+    (0, box_depth, 0),
+    (box_width, box_depth, 0),
+    (box_width, 0, 0),
+    (0, 0, box_height),
+    (0, box_depth, box_height),
+    (box_width, box_depth, box_height),
+    (box_width, 0, box_height),
+]
+
+# Define the faces of the box
+faces = [
+    (0, 1, 2, 3),
+    (4, 5, 6, 7),
+    (0, 4, 7, 3),
+    (1, 5, 4, 0),
+    (2, 6, 5, 1),
+    (3, 7, 6, 2),
+]
+
+# Create the vertices and faces of the box mesh
+mesh.from_pydata(verts, [], faces)
+mesh.update()
+
+# Create a new object for the box and link it to the scene
+obj1 = bpy.data.objects.new("BoxObject", mesh)
+bpy.context.scene.collection.objects.link(obj1)
+obj1.location = (0, 0, 0)
+
+
+# Create a new mesh for the lid
+lid_mesh = bpy.data.meshes.new("LidMesh")
+
+# Define the vertices of the lid
+# Define the vertices of the lid with a slightly taller size
+# Define the vertices of the lid with a slightly taller size
+lid_verts = [
+    (-0.1, -0.1, box_height),
+    (-0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, -0.1, box_height),
+    (-0.1, -0.1, box_height + lid_height + 0.1),
+    (-0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, -0.1, box_height + lid_height + 0.1),
+]
+
+# Define the faces of the lid
+lid_faces = [
+    (0, 1, 2, 3),
+    (4, 7, 6, 5),
+    (0, 4, 5, 1),
+    (1, 5, 6, 2),
+    (2, 6, 7, 3),
+    (3, 7, 4, 0),
+]
+
+# Create the vertices and faces of the lid mesh
+lid_mesh.from_pydata(lid_verts, [], lid_faces)
+lid_mesh.update()
+
+# Create a new object for the lid and link it to the scene
+lid_obj1 = bpy.data.objects.new("LidObject", lid_mesh)
+bpy.context.scene.collection.objects.link(lid_obj1)
+lid_obj1.location = (0, 0, 0)
+
+
+#2ndbox
+
+
+# Define the dimensions of the box
+box_width = 3.5
+box_depth = 3.5
+box_height = 2.8
+lid_height = 0.5
+
+# Create a new mesh for the box
+mesh = bpy.data.meshes.new("BoxMesh")
+
+# Define the vertices of the box
+verts = [
+    (0, 0, 0),
+    (0, box_depth, 0),
+    (box_width, box_depth, 0),
+    (box_width, 0, 0),
+    (0, 0, box_height),
+    (0, box_depth, box_height),
+    (box_width, box_depth, box_height),
+    (box_width, 0, box_height),
+]
+
+# Define the faces of the box
+faces = [
+    (0, 1, 2, 3),
+    (4, 5, 6, 7),
+    (0, 4, 7, 3),
+    (1, 5, 4, 0),
+    (2, 6, 5, 1),
+    (3, 7, 6, 2),
+]
+
+# Create the vertices and faces of the box mesh
+mesh.from_pydata(verts, [], faces)
+mesh.update()
+
+# Create a new object for the box and link it to the scene
+obj1 = bpy.data.objects.new("BoxObject", mesh)
+bpy.context.scene.collection.objects.link(obj1)
+obj1.location = (5, 0, 0)
+
+
+# Create a new mesh for the lid
+lid_mesh = bpy.data.meshes.new("LidMesh")
+
+# Define the vertices of the lid
+# Define the vertices of the lid with a slightly taller size
+# Define the vertices of the lid with a slightly taller size
+lid_verts = [
+    (-0.1, -0.1, box_height),
+    (-0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, -0.1, box_height),
+    (-0.1, -0.1, box_height + lid_height + 0.1),
+    (-0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, -0.1, box_height + lid_height + 0.1),
+]
+
+# Define the faces of the lid
+lid_faces = [
+    (0, 1, 2, 3),
+    (4, 7, 6, 5),
+    (0, 4, 5, 1),
+    (1, 5, 6, 2),
+    (2, 6, 7, 3),
+    (3, 7, 4, 0),
+]
+
+# Create the vertices and faces of the lid mesh
+lid_mesh.from_pydata(lid_verts, [], lid_faces)
+lid_mesh.update()
+
+# Create a new object for the lid and link it to the scene
+lid_obj2 = bpy.data.objects.new("LidObject", lid_mesh)
+bpy.context.scene.collection.objects.link(lid_obj2)
+lid_obj2.location = (5, 0, 0)
+
+#3rdBox
+
+# Define the dimensions of the box
+box_width = 5.5
+box_depth = 5.5
+box_height = 3.8
+lid_height = 0.5
+
+# Create a new mesh for the box
+mesh = bpy.data.meshes.new("BoxMesh")
+
+# Define the vertices of the box
+verts = [
+    (0, 0, 0),
+    (0, box_depth, 0),
+    (box_width, box_depth, 0),
+    (box_width, 0, 0),
+    (0, 0, box_height),
+    (0, box_depth, box_height),
+    (box_width, box_depth, box_height),
+    (box_width, 0, box_height),
+]
+
+# Define the faces of the box
+faces = [
+    (0, 1, 2, 3),
+    (4, 5, 6, 7),
+    (0, 4, 7, 3),
+    (1, 5, 4, 0),
+    (2, 6, 5, 1),
+    (3, 7, 6, 2),
+]
+
+# Create the vertices and faces of the box mesh
+mesh.from_pydata(verts, [], faces)
+mesh.update()
+
+# Create a new object for the box and link it to the scene
+obj3 = bpy.data.objects.new("BoxObject", mesh)
+bpy.context.scene.collection.objects.link(obj3)
+obj3.location = (11, 0, 0)
+
+
+# Create a new mesh for the lid
+lid_mesh = bpy.data.meshes.new("LidMesh")
+
+# Define the vertices of the lid
+# Define the vertices of the lid with a slightly taller size
+# Define the vertices of the lid with a slightly taller size
+lid_verts = [
+    (-0.1, -0.1, box_height),
+    (-0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, box_depth + 0.1, box_height),
+    (box_width + 0.1, -0.1, box_height),
+    (-0.1, -0.1, box_height + lid_height + 0.1),
+    (-0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, box_depth + 0.1, box_height + lid_height + 0.1),
+    (box_width + 0.1, -0.1, box_height + lid_height + 0.1),
+]
+
+# Define the faces of the lid
+lid_faces = [
+    (0, 1, 2, 3),
+    (4, 7, 6, 5),
+    (0, 4, 5, 1),
+    (1, 5, 6, 2),
+    (2, 6, 7, 3),
+    (3, 7, 4, 0),
+]
+
+# Create the vertices and faces of the lid mesh
+lid_mesh.from_pydata(lid_verts, [], lid_faces)
+lid_mesh.update()
+
+# Create a new object for the lid and link it to the scene
+lid_obj3 = bpy.data.objects.new("LidObject", lid_mesh)
+bpy.context.scene.collection.objects.link(lid_obj3)
+lid_obj3.location = (11, 0, 0)
